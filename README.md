@@ -37,4 +37,4 @@ Liste von eindeutig unterscheidbaren Gesichtsausdrücke basierend auf den zwei A
 10. **Interessiert**: Augen weit geöffnet, Augenbrauen leicht angehoben, Ohren leicht nach vorne gedreht
 
 # Contributors
-- [Wieerwill](github.com/wieerwill)
+- [Wieerwill](https://www.github.com/wieerwill)
