@@ -36,5 +36,12 @@ Liste von eindeutig unterscheidbaren Gesichtsausdrücke basierend auf den zwei A
 9. **Konzentriert**: Augen leicht zusammengekniffen, Ohren parallel zur Kopfposition
 10. **Interessiert**: Augen weit geöffnet, Augenbrauen leicht angehoben, Ohren leicht nach vorne gedreht
 
+# Hackerkiste
+Die Vorträge und Diskussionen werden auf der [Hackerkiste](https://hackerkiste.de/) 2023 vorgestellt und gehalten.
+
+- Talk: [Emotionale Robotik - eine Einführung](./Talk%3AEmotionaleRobotik.pdf), ca. 45 Minuten
+- OpenSpace: [Emotionale Robotik - Herausforderungen und ethische Überlegungen](./OpenSpace%3AEmotionaleRobotik.pdf), ca. 1 Stunde
+- Hackathon: tba
+
 # Contributors
 - [Wieerwill](https://www.github.com/wieerwill)
