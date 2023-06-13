@@ -43,10 +43,10 @@
 \setbeamercolor{author}{fg=black}
 \setbeamercolor{date}{fg=black}
 
-\setbeamerfont{author}{size=\scriptsize}
-\setbeamerfont{date}{size=\tiny}
-\setbeamerfont{title}{series=\bfseries}
-\setbeamerfont{subtitle}{series=\mdseries,size=\footnotesize}
+\setbeamerfont{author}{size=\small}
+\setbeamerfont{date}{size=\small}
+\setbeamerfont{title}{series=\bfseries,size=\Huge}
+\setbeamerfont{subtitle}{series=\mdseries,size=\Large}
 \setbeamerfont{frametitle}{series=\bfseries}
 \setbeamerfont{framesubtitle}{series=\mdseries}
 \setbeamerfont{block title}{series=\centering, size=\small}
@@ -77,8 +77,9 @@
 
 % Define frame title and subtitle layout
 \setbeamertemplate{frametitle}{
+  \vspace*{-18pt}
   \begin{beamercolorbox}[leftskip=2cm]{frametitle}%
-    \usebeamerfont{frametitle}\insertframetitle\\
+    %\usebeamerfont{frametitle}\insertframetitle\\
     \usebeamerfont{framesubtitle}\insertframesubtitle%
   \end{beamercolorbox}
 }
@@ -86,8 +87,8 @@
 % Define the title page
 \setbeamertemplate{title page}{
   \vskip0pt plus 1filll
-  \hspace{-12mm}% Pull back the box in an inelegant way - but it works!
-  \begin{beamercolorbox}[wd=0.9\textwidth,sep=10pt,leftskip=8mm]{title}
+  \hspace{-5mm}% Pull back the box in an inelegant way
+  \begin{beamercolorbox}[wd=0.9\textwidth,sep=15pt,leftskip=10mm]{title}
     {\usebeamerfont{title}\inserttitle}
 
     {\usebeamerfont{subtitle}\insertsubtitle}
