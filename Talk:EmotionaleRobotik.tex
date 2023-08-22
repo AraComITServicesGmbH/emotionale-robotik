@@ -2,10 +2,10 @@
 %%%        Project: AraCom - Emotionale Robotik
 %%%    Description: Introduction paper to emotional robotics
 %%%        Version: 1.0
-%%%         Author: Robert Jeutter <robert.jeutter@aracom.de>
-%%%     Maintainer: Robert Jeutter <robert.jeutter@aracom.de>
+%%%         Author: Robert Jeutter <robert.jeutter@aracom.de>, Dennis Eisermann <dennis.eisermann@aracom.de>
+%%%     Maintainer: Robert Jeutter <robert.jeutter@aracom.de>, Dennis Eisermann <dennis.eisermann@aracom.de>
 %%%  Creation-Date: 24.05.2023
-%%%      Copyright: (c) 2023 Robert Jeutter
+%%%      Copyright: (c) 2023 Robert Jeutter, Dennis Eisermann
 %%%
 
 \documentclass[aspectratio=169]{beamer}
@@ -21,7 +21,7 @@
 \maketitle
 
 \section{Über uns}
-\begin{frame}{über uns}
+\begin{frame}{Über uns}
   \begin{columns}
     \begin{column}{0.45\textwidth}
       \begin{figure}[h]
@@ -40,12 +40,12 @@
     \end{column}
   \end{columns}
 \end{frame}
-\begin{frame}{die AraCom IT Service GmbH}
+\begin{frame}{AraCom}
   \includegraphics[width=.6\linewidth]{images/AraCom-Logo-black.png}
   IT Service GmbH\\
   der Spezialist für maßgeschneiderte Software\\
   Hauptsitz in Gersthofen, weitere in München, Stuttgart und Bamberg\\
-  bietet Ausbildungsplätze \& spannende Projekte
+  bietet Spaß, Ausbildungsplätze \& spannende Projekte
 \end{frame}
 \begin{frame}{Sponsor des RoboCup}
   \includegraphics[height=30px]{images/AraCom-Logo-black.png} sponsort
@@ -70,210 +70,248 @@
   \end{columns}
 \end{frame}
 
+\section{Emotionen}
 \begin{frame}{Definition von Emotionen}
   \begin{itemize}
-      \item Emotionen sind komplexe psychologische Zustände.
-      \item Sie beinhalten drei unterschiedliche Komponenten:
-      \begin{itemize}
-          \item Ein subjektives Erleben.
-          \item Eine physiologische Reaktion.
-          \item Eine verhaltensbezogene oder expressive Antwort.
-      \end{itemize}
-      \item Emotionen sind vielschichtige Antworten auf Reize.
-      \item Sie können durch unsere Umgebung oder Erinnerungen ausgelöst werden.
-      \item Typischerweise von kurzer Dauer.
-      \item Kann aus verbalen, physiologischen, verhaltensbezogenen und neuronalen Mechanismen bestehen.
+    \item Emotionen sind komplexe psychologische Zustände.
+    \item Sie beinhalten drei unterschiedliche Komponenten:
+          \begin{itemize}
+            \item Ein subjektives Erleben.
+            \item Eine physiologische Reaktion.
+            \item Eine verhaltensbezogene oder expressive Antwort.
+          \end{itemize}
+    \item Emotionen sind vielschichtige Antworten auf Reize.
+    \item Sie können durch unsere Umgebung oder Erinnerungen ausgelöst werden.
+    \item Typischerweise von kurzer Dauer.
+    \item Kann aus verbalen, physiologischen, verhaltensbezogenen und neuronalen Mechanismen bestehen.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Verhaltensbezogene oder expressive Antwort von Emotionen}
-  \begin{itemize}
-      \item Bezieht sich auf den sichtbaren Ausdruck von Emotionen.
-      \item Gibt Hinweise über den emotionalen Zustand.
-      \item Kommuniziert Absichten und Gefühle an andere.
-      \item Beeinflusst soziale Interaktionen und Beziehungen.
-      \item Kann automatisch oder bewusst gesteuert werden.
-  \end{itemize}
+\begin{frame}{Verhaltensbezogene oder expressive Emotionen}
+  \begin{columns}
+    \begin{column}{0.7\textwidth}
+      \begin{itemize}
+        \item Bezieht sich auf den sichtbaren Ausdruck von Emotionen.
+        \item Gibt Hinweise über den emotionalen Zustand.
+        \item Kommuniziert Absichten und Gefühle an andere.
+        \item Beeinflusst soziale Interaktionen und Beziehungen.
+        \item Kann automatisch oder bewusst gesteuert werden.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=\textwidth]{2020_EmotionWheel.png}
+        \caption{Emotion Wheel}
+      \end{figure}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Emotionen auszudrücken}
-  \begin{itemize}
-      \item Gesichtsausdrücke, z.B. Lächeln oder Stirnrunzeln.
-      \item Gesten, z.B. Klatschen oder Zeigen.
-      \item Körpersprache, z.B. Körperhaltung oder Nähe.
-      \item Stimmklang, z.B. Schreien oder Flüstern.
-  \end{itemize}
+  \begin{columns}
+    \begin{column}{0.7\textwidth}
+      \begin{itemize}
+        \item<1-> Gesichtsausdrücke, z.B. Lächeln oder Stirnrunzeln.
+        \item<2-> Gesten, z.B. Klatschen oder Zeigen.
+        \item<3-> Körpersprache, z.B. Körperhaltung oder Nähe.
+        \item<4-> Stimmklang, z.B. Schreien oder Flüstern.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.3\textwidth}<1>
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=\textwidth]{Facial-expression-continua-used-in-the-Emotion-Hexagon-task-Running-from-left-to-right.jpeg}
+        \caption{facial Expressions~\cite{facialExpressionRecognition} }
+      \end{figure}
+    \end{column}
+    \begin{column}{0.3\textwidth}<3->
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=\textwidth]{Canine-Body-Language.png}
+        \caption{Dog Language~\cite{doggieLanguage} }
+      \end{figure}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Definition --- Soziale und Emotionale Intelligenz}
-  \textbf{Definition sozialer Intelligenz:}
+  \textbf{Definition sozialer Intelligenz}
   \begin{quote}
-      Verstehen und Navigieren in sozialen Umgebungen und Interaktionen.
+    Verstehen und Navigieren in sozialen Umgebungen und Interaktionen.
   \end{quote}
-  
-  \textbf{Definition emotionaler Intelligenz:}
+  \vspace{1cm}
+
+  \textbf{Definition emotionaler Intelligenz}
   \begin{quote}
-      Erkennen, Verstehen und Steuern der eigenen Emotionen sowie der Emotionen anderer.
+    Erkennen, Verstehen und Steuern der eigenen Emotionen\\
+    sowie der Emotionen anderer.
   \end{quote}
 \end{frame}
 
+\section{Emotionen in der Robotik}
 \begin{frame}{Verschmelzende Domänen bei emotionaler Robotik}
-  \begin{itemize}
-      \item Robotik
-      \item Psychologie
-      \item Künstlicher Intelligenz
-  \end{itemize}
+  \begin{center}
+    Robotik\\
+    +\\
+    Psychologie\\
+    +\\
+    Künstlicher Intelligenz
+  \end{center}
 \end{frame}
 
 \begin{frame}{Aufstieg der Emotionalen Robotik}
-  \textbf{Ursprünge der emotionalen Robotik:}
+  \textbf{Ursprünge der emotionalen Robotik}
   \begin{itemize}
-      \item Erkennen menschlicher Emotionen
-      \item Reagieren und Interagieren auf Basis dieser Emotionen
+    \item Erkennen menschlicher Emotionen
+    \item Reagieren und Interagieren auf Basis dieser Emotionen
   \end{itemize}
-  
-  \textbf{Aktueller Stand:}
+
+  \textbf{Aktueller Stand}
   \begin{itemize}
-      \item Emotionserkennung
-      \item Feedback-Mechanismen
-      \item Anwendungen in realen Szenarien
+    \item Emotionserkennung
+    \item Feedback-Mechanismen
+    \item Anwendungen in realen Szenarien
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Ziele und Vorteile der Emotionalen Robotik}
-  \textbf{Hauptziele:}
-  \begin{itemize}
-      \item Vertiefung der Mensch-Maschine-Interaktionen
-      \item Personalisierte Benutzererfahrungen
-  \end{itemize}
-  
-  \textbf{Wesentliche Vorteile:}
-  \begin{itemize}
-      \item Emotionaler Support
-      \item Motivation und Ansporn
-      \item Steigerung der Geselligkeit
-      \item Verbesserung der Lebensqualität
-  \end{itemize}
+  \begin{columns}
+    \begin{column}{0.7\textwidth}
+      \textbf{Hauptziele}
+      \begin{itemize}
+        \item Vertiefung der Mensch-Maschine-Interaktionen
+        \item Personalisierte Benutzererfahrungen
+      \end{itemize}
+
+      \textbf{Wesentliche Vorteile}
+      \begin{itemize}
+        \item Emotionaler Support
+        \item Motivation und Ansporn
+        \item Steigerung der Geselligkeit
+        \item Verbesserung der Lebensqualität
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=\textwidth]{andy-kelly-0E_vhMVqL9g-unsplash.png}
+        \caption{Mensch \& Roboter Interagieren}
+      \end{figure}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Risiken und Bedenken}
   \begin{itemize}
-      \item Datenschutz und -sicherheit
-      \item Emotionale Manipulation durch Maschinen
-      \item Potenzielle Voreingenommenheiten bei der Emotionserkennung
+    \item Datenschutz und -sicherheit
+    \item Emotionale Manipulation durch Maschinen
+    \item Potenzielle Voreingenommenheiten bei der Emotionserkennung
   \end{itemize}
 \end{frame}
 
+\section{Einsatz emotionaler Robotik}
 \begin{frame}{Anwendungen und Einsatzmöglichkeiten}
-  \textbf{Aktuelle Einsatzbereiche:}
+  \textbf{Aktuelle Einsatzbereiche}
   \begin{itemize}
-      \item Therapeutische Umgebungen
-      \item Kundenservice
+    \item Therapeutische Umgebungen
+    \item Kundenservice
   \end{itemize}
+  \vspace{1cm}
 
-  \textbf{Potenzielle Bereiche:}
+  \textbf{Potenzielle Bereiche}
   \begin{itemize}
-      \item Pflege von älteren Menschen
-      \item Unterstützung der psychischen Gesundheit
-      \item Personalisiertes Tutoring
+    \item Pflege von älteren Menschen
+    \item Unterstützung der psychischen Gesundheit
+    \item Personalisiertes Tutoring
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Einführung von Emotionaler Robotik im Betrieb}
-  \textbf{Technologische Anforderungen:}
+  \textbf{Technologische Anforderungen}
   \begin{itemize}
-      \item Robotik: Sensoren, Prozessoren, Aktoren 
-      \item ML-Modelle: Umgebungserkennung, Schlussfolgern
+    \item Robotik: Sensoren, Prozessoren, Aktoren
+    \item ML-Modelle: Umgebungserkennung, Schlussfolgern
   \end{itemize}
-  \textbf{Training und Datenerfassung:}
+  \vspace{.5cm}
+
+  \textbf{Training und Datenerfassung}
   \begin{itemize}
-      \item Erfassung emotionaler Daten
-      \item Verfeinerung von Maschinenantworten
-      \item Feedback-Schleifen zwischen Mensch und Maschine
+    \item Erfassung emotionaler Daten
+    \item Verfeinerung von Maschinenantworten
+    \item Feedback-Schleifen zwischen Mensch und Maschine
   \end{itemize}
+  \vspace{.5cm}
 
   \textbf{Ethische Anforderungen}
   \begin{itemize}
-      \item Richtlinien und Vorsichtsmaßnahmen für Unternehmen
-      \item Akzeptanz von maschinellen Lösungen schaffen
-      \item Differenz zwischen Mensch und Maschine
+    \item Richtlinien und Vorsichtsmaßnahmen für Unternehmen
+    \item Akzeptanz von maschinellen Lösungen schaffen
+    \item Differenz zwischen Mensch und Maschine
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Zukünftige Horizonte}
   \begin{itemize}
-      \item Fortgeschrittene Modelle, die kulturelle Unterschiede berücksichtigen
-      \item Roboter, die künstliche Empathie zeigen
-      \item Generierung und Ausdruck einzigartiger Roboter-,,Emotionen''
+    \item Fortgeschrittene Modelle, die kulturelle Unterschiede berücksichtigen
+    \item Roboter, die künstliche Empathie zeigen
+    \item Generierung und Ausdruck einzigartiger Roboter-,,Emotionen''
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Anthropomorphismus und Vertrauen}
+  \begin{columns}
+    \begin{column}{.5\textwidth}
+      \textbf{Anthropomorphismus}: Zuweisung menschlicher Eigenschaften
+    \end{column}
+    \begin{column}{.5\textwidth}
+      \begin{figure}[h]
+        \centering
+        \includegraphics[width=.6\textwidth]{2h-media-L3BtJiiSkwY-unsplash.png}
+        \caption{Mensch \& Roboter Interagieren}
+      \end{figure}
+    \end{column}
+  \end{columns}
+
+  \textbf{Die Implikationen für Roboter}
   \begin{itemize}
-      \item Anthropomorphismus: Zuweisung menschlicher Eigenschaften
+    \item Erhöhtes Vertrauen
+    \item ,,Uncanny Valley'' Effekt
   \end{itemize}
-  \textbf{Die Implikationen für Roboter:}
+  \vspace{.5cm}
+
+  \textbf{Herausforderungen}
   \begin{itemize}
-      \item Erhöhtes Vertrauen
-      \item ,,Uncanny Valley'' Effekt
+    \item Ängste im Zusammenhang mit Technologie ansprechen
+    \item Akzeptanz fördern
   \end{itemize}
-  \textbf{Herausforderungen:}
-  \begin{itemize}
-      \item Ängste im Zusammenhang mit Technologie ansprechen
-      \item Akzeptanz fördern
-  \end{itemize}
+
 \end{frame}
 
 \begin{frame}{,,Uncanny Valley'' Effekt}
   \begin{itemize}
-      \item Konzept in Robotik und Animation.
-      \item Unbehagen durch fast-menschliche Darstellung.
-      \item 1970 von Masahiro Mori geprägt.
-      \item Höchstes Unwohlsein vor perfekter Menschlichkeit.
-      \item Beeinflusst Technologieakzeptanz.
+    \item Konzept in Robotik und Animation.
+    \item Unbehagen durch fast-menschliche Darstellung.
+    \item 1970 von Masahiro Mori geprägt.
+    \item Höchstes Unwohlsein vor perfekter Menschlichkeit.
+    \item Beeinflusst Technologieakzeptanz.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Fragen \& Antworten}
-  Öffnung für Fragen und Förderung eines beidseitigen Dialogs.
-\end{frame}
-
+\section{Zusammenfassung}
 \begin{frame}{Schlussfolgerung und Schlüsselerkenntnisse}
   \begin{itemize}
-      \item Zusammenfassung des Potenzials und der Herausforderungen der emotionalen Robotik
-      \item Ermutigung zur weiteren Erkundung und zum Verständnis in diesem Bereich
-      \item Einladung zu Zusammenarbeiten und Diskussionen nach der Präsentation
+    \item Zusammenfassung des Potenzials und der Herausforderungen der emotionalen Robotik
+    \item Ermutigung zur weiteren Erkundung und zum Verständnis in diesem Bereich
+    \item Einladung zu Zusammenarbeiten und Diskussionen nach der Präsentation
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Danksagungen und Referenzen}
-  \textbf{Danksagungen:}
+\begin{frame}{Danksagungen}
   \begin{itemize}
-      \item Aracom IT-Services GmbH für die Unterstützung bei der Erstellung dieser Präsentation
-      \item Hackerkiste für die Organisation dieses tollen Events
+    \item \textbf{Aracom IT Services GmbH} für die Unterstützung bei der Erstellung dieser Präsentation
+    \item \textbf{Hackerkiste} für die Organisation dieses tollen Events
   \end{itemize}
-  
-  \textbf{Referenzen:}
-  \begin{enumerate}
-      \item Goleman, D. (2006). \textit{Social Intelligence: The New Science of Human Relationships}. Bantam Books.
-      \item Goleman, D. (1995). \textit{Emotional Intelligence}. Bantam Books. 
-      \item Siciliano, B., \& Khatib, O. (Eds.). (2016). \textit{Springer Handbook of Robotics}. Springer. [For general knowledge on Robotics]
-      \item Goodfellow, I., Bengio, Y., \& Courville, A. (2016). \textit{Deep learning}. MIT press. [For Machine Learning and its convergence with AI]
-      \item Russell, S. J., \& Norvig, P. (2020). \textit{Artificial Intelligence: A Modern Approach}. Malaysia; Pearson Education Limited. [For Artificial Intelligence]
-      \item Breazeal, C. (2003). Emotion and sociable humanoid robots. \textit{International Journal of Human-Computer Studies}, 59(1-2), 119-155. [For emotional robotics]
-      \item Whitby, B. (2012). Do you want a robot lover?. \textit{The Machine Question}, 3-16. [For emotional manipulation by machines]
-      \item Zadeh, L. A. (1973). Outline of a new approach to the analysis of complex systems and decision processes. \textit{IEEE Transactions on Systems, Man, and Cybernetics}, SMC-3(1), 28-44.
-      \item Weizenbaum, J. (1966). ELIZA—a computer program for the study of natural language communication between man and machine. \textit{Communications of the ACM}, 9(1), 36-45.
-      \item Takanishi, A., \& Ishiguro, H. (2018). Pioneers in robotics: Hiroshi Ishiguro—From android science to interactive robots. \textit{IEEE Robotics \& Automation Magazine}, 25(3), 10-14.
-      \item Wada, K., Shibata, T., Musha, T., \& Kimura, S. (2008). Robot therapy for elders affected by dementia. \textit{IEEE Engineering in Medicine and Biology Magazine}, 27(4), 53-60.
-      \item Kanade, T., Cohn, J. F.,\& Tian, Y. (2000). Comprehensive database for facial expression analysis. In \textit{Fourth IEEE International Conference on Automatic Face and Gesture Recognition} (pp. 46-53).
-      \item Zeng, Z., Pantic, M., Roisman, G. I.,\& Huang, T. S. (2009). A survey of affect recognition methods: Audio, visual, and spontaneous expressions. \textit{IEEE transactions on pattern analysis and machine intelligence}, 31(1), 39-58.
-      \item Epley, N., Waytz, A.,\& Cacioppo, J. T. (2007). On seeing human: A three-factor theory of anthropomorphism. \textit{Psychological Review}, 114(4), 864.
-      \item Mori, M., MacDorman, K. F.,\& Kageki, N. (2012). The uncanny valley [From the field]. \textit{IEEE Robotics\& Automation Magazine}, 19(2), 98-100.
-      \item Riek, L. D., Rabinowitch, T. C., Chakrabarti, B.,\& Robinson, P. (2009). How anthropomorphism affects empathy toward robots. In \textit{4th ACM/IEEE international conference on human-robot interaction (HRI)} (pp. 245-246).
-      \item Mori, M., MacDorman, K. F.,\& Kageki, N. (2012). Das unheimliche Tal [From the field]. \textit{IEEE Robotics \& Automation Magazine}, 19(2), 98-100.
-      \item Bartneck, C., Kanda, T., Ishiguro, H.,\& Hagita, N. (2007). Is the Uncanny Valley an Uncanny Cliff? \textit{Proceedings of the 16th IEEE}, 368-373.
-  \end{enumerate}
 \end{frame}
 
 \begin{frame}[c]{}
