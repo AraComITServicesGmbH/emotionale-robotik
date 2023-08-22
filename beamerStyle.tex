@@ -72,7 +72,7 @@
 % Put the logo in each slide's down right area
 \pgfdeclareimage[width=0.4\paperwidth]{araLogo}{./images/aracom_Logo-2023-white.png}
 \renewcommand{\logo}{araLogo}
-\setbeamertemplate{headline}{\vspace{1ex}\hspace{0.02\paperwidth} \LARGE{AraCom}}
+\setbeamertemplate{footline}{\hspace{0.72\paperwidth} \LARGE{www.aracom.de}}
 
 % Define frame title and subtitle layout
 \setbeamertemplate{frametitle}{
@@ -89,14 +89,12 @@
   \begin{beamercolorbox}[wd=0.9\textwidth,sep=10pt,leftskip=8mm]{title}
     {\usebeamerfont{title}\inserttitle}
 
-    %{\usebeamerfont{subtitle}\insertsubtitle}
-
     {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor}
-
+    
     {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate}
   \end{beamercolorbox}
   \setbeamertemplate{footline}{}
-  \vspace{-.6ex}\hspace{0.57\paperwidth}\pgfuseimage{\logo}
+  \vspace{-.6ex}\hspace{0.56\paperwidth}\pgfuseimage{\logo}
 }
 
 \newcommand{\TikzSplitSlide}[1]{%
