@@ -19,34 +19,33 @@
 \usepackage{amsfonts, amsmath, oldgerm, lmodern, animate}
 \usepackage{verbatim}
 \usepackage{bm}
-\usefonttheme{serif}
-
+\usepackage[T1]{fontenc}
 \graphicspath{{./images/}}
 
-\definecolor{aracomblue}{RGB}{38, 113, 142}
-\definecolor{aracomred}{RGB}{143, 53, 70}
+\RequirePackage{arafont}
+
+\definecolor{aracomblue}{RGB}{96, 167, 192}
 \definecolor{aracomgrey}{rgb}{0.9, 0.9, 0.9}
 
 \setbeamercolor{block title}{fg=white,bg=aracomblue}
 \setbeamercolor{block body}{fg=white,bg=aracomblue}
 
 \newcommand{\themecolor}[1]{
-		\setbeamercolor{normal text}{fg=darkgray,bg=white}
-		\setbeamercolor{structure}{fg=aracomblue}
-		\setbeamercolor{block title}{fg=aracomblue,bg=aracomgrey}
-		\setbeamercolor{block body}{fg=darkgray,bg=aracomgrey}
+  \setbeamercolor{normal text}{fg=darkgray,bg=white}
+  \setbeamercolor{structure}{fg=aracomblue}
+  \setbeamercolor{block title}{fg=aracomblue,bg=aracomgrey}
+  \setbeamercolor{block body}{fg=darkgray,bg=aracomgrey}
 }
 
 \themecolor{white}
 \setbeamercolor{title}{fg=aracomblue}
-\setbeamercolor{alerted text}{fg=aracomred}
 \setbeamercolor{author}{fg=black}
 \setbeamercolor{date}{fg=black}
 
-\setbeamerfont{author}{size=\small}
-\setbeamerfont{date}{size=\small}
-\setbeamerfont{title}{series=\bfseries,size=\Huge}
-\setbeamerfont{subtitle}{series=\mdseries,size=\Large}
+\setbeamerfont{author}{size=\scriptsize}
+\setbeamerfont{date}{size=\tiny}
+\setbeamerfont{title}{series=\bfseries, size=\fontsize{36}{40}}
+\setbeamerfont{subtitle}{series=\mdseries,size=\footnotesize}
 \setbeamerfont{frametitle}{series=\bfseries}
 \setbeamerfont{framesubtitle}{series=\mdseries}
 \setbeamerfont{block title}{series=\centering, size=\small}
@@ -61,25 +60,24 @@
 \setbeamertemplate{itemize subsubitem}{\ensuremath{\circ}}
 
 \newenvironment{colorblock}[3][white]{%
-	\begingroup
-	\setbeamercolor{block title}{fg=#1,bg=#2}
-	\setbeamercolor{block body} {fg=#1,bg=#2}
-	\begin{block}{#3}
-	}{%
-	\end{block}
-	\endgroup
+  \begingroup
+  \setbeamercolor{block title}{fg=#1,bg=#2}
+  \setbeamercolor{block body} {fg=#1,bg=#2}
+  \begin{block}{#3}
+    }{%
+  \end{block}
+  \endgroup
 }
 
-% Put the logo in each slide's top left area
-\pgfdeclareimage[width=0.1\paperwidth]{bluelogo}{./images/AraCom-Logo-black.png}
-\renewcommand{\logo}{bluelogo}
-\setbeamertemplate{headline}{\vspace{1ex}\hspace{0.03\textwidth}\pgfuseimage{\logo}}
+% Put the logo in each slide's down right area
+\pgfdeclareimage[width=0.4\paperwidth]{araLogo}{./images/aracom_Logo-2023-white.png}
+\renewcommand{\logo}{araLogo}
+\setbeamertemplate{headline}{\vspace{1ex}\hspace{0.02\paperwidth} \LARGE{AraCom}}
 
 % Define frame title and subtitle layout
 \setbeamertemplate{frametitle}{
-  \vspace*{-18pt}
   \begin{beamercolorbox}[leftskip=2cm]{frametitle}%
-    %\usebeamerfont{frametitle}\insertframetitle\\
+    \usebeamerfont{frametitle}\insertframetitle\\
     \usebeamerfont{framesubtitle}\insertframesubtitle%
   \end{beamercolorbox}
 }
@@ -87,25 +85,27 @@
 % Define the title page
 \setbeamertemplate{title page}{
   \vskip0pt plus 1filll
-  \hspace{-5mm}% Pull back the box in an inelegant way
-  \begin{beamercolorbox}[wd=0.9\textwidth,sep=15pt,leftskip=10mm]{title}
+  \hspace{-12mm}% Pull back the box in an inelegant way - but it works!
+  \begin{beamercolorbox}[wd=0.9\textwidth,sep=10pt,leftskip=8mm]{title}
     {\usebeamerfont{title}\inserttitle}
 
-    {\usebeamerfont{subtitle}\insertsubtitle}
+    %{\usebeamerfont{subtitle}\insertsubtitle}
 
     {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor}
 
     {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate}
   \end{beamercolorbox}
+  \setbeamertemplate{footline}{}
+  \vspace{-.6ex}\hspace{0.57\paperwidth}\pgfuseimage{\logo}
 }
 
 \newcommand{\TikzSplitSlide}[1]{%
   \rule{0.4\paperwidth}{0pt}%
   \begin{tikzpicture}
     \clip (-0.1\paperwidth,-0.5\paperheight) --
-          ( 0.5\paperwidth,-0.5\paperheight) --
-          ( 0.5\paperwidth, 0.5\paperheight) --
-          ( 0.1\paperwidth, 0.5\paperheight) -- cycle;
+    ( 0.5\paperwidth,-0.5\paperheight) --
+    ( 0.5\paperwidth, 0.5\paperheight) --
+    ( 0.1\paperwidth, 0.5\paperheight) -- cycle;
     \node at (0.2\paperwidth,0) {%
       \includegraphics[height=\paperheight]{#1}%
     };
@@ -113,25 +113,25 @@
 }
 
 \renewcommand{\maketitle}{
-\begingroup
+  \begingroup
   \setbeamertemplate{background}{
-      \includegraphics[height=\paperheight]{./images/background.png}
+    \includegraphics[height=\paperheight]{./images/background.png}
   }
   \vspace{-5ex}\hspace{-5ex}\begin{frame}
-      \Large\titlepage%
+    \Large\titlepage%
   \end{frame}
-\endgroup
+  \endgroup
 }
 
 \newenvironment{chapter}[3][]{% Args: image (optional), color, frame title
   \begingroup
   \themecolor{blue}
-  \ifstrequal{#2}{aracomlightgreen}{ % Use blue text on light green, else white
-    \setbeamercolor{frametitle}{fg=aracomblue}
-    \setbeamercolor{normal text}{fg=aracomblue,bg=#2}
-  }{
+  \ifstrequal{#2}{aracomblue}{ % Use blue text, else white
     \setbeamercolor{frametitle}{fg=white}
     \setbeamercolor{normal text}{fg=white,bg=#2}
+  }{
+    \setbeamercolor{frametitle}{fg=aracomblue}
+    \setbeamercolor{normal text}{fg=aracomblue,bg=#2}
   }
   \ifstrempty{#1}{}{\setbeamertemplate{background}{\TikzSplitSlide{#1}}}
   \setbeamertemplate{frametitle}{%
@@ -142,11 +142,11 @@
     \end{beamercolorbox}
   }
   \begin{frame}{#3}
-  \hspace*{0.05\textwidth}%
-  \minipage{0.35\textwidth}%
-  \usebeamercolor[fg]{normal text}%
-}{%
-  \endminipage%
+    \hspace*{0.05\textwidth}%
+    \minipage{0.35\textwidth}%
+    \usebeamercolor[fg]{normal text}%
+    }{%
+    \endminipage%
   \end{frame}
   \endgroup
 }
@@ -154,8 +154,8 @@
 \newenvironment{sidepic}[2]{% Args: image, frame title
   \begingroup
   \setbeamertemplate{background}{%
-  \hspace*{0.6\paperwidth}%
-  \includegraphics[height=\paperheight]{#1}%
+    \hspace*{0.6\paperwidth}%
+    \includegraphics[height=\paperheight]{#1}%
   }
   \setbeamertemplate{frametitle}{% Same as normal, but with right skip
     \vspace*{-3.5ex}
@@ -165,9 +165,9 @@
     \end{beamercolorbox}
   }
   \begin{frame}{#2}
-  \minipage{0.6\textwidth}%
-}{%
-  \endminipage%
+    \minipage{0.6\textwidth}%
+    }{%
+    \endminipage%
   \end{frame}
   \endgroup
 }
@@ -182,11 +182,11 @@
 
 % style of subsection presented in the table of contents
 \setbeamertemplate{subsection in toc}{}
-% \setbeamertemplate{subsection in toc}{\footnotesize\hspace{1.2 em}$\blacktriangleright$~\inserttocsubsection}
+\setbeamertemplate{subsection in toc}{\textcolor{white}\footnotesize\hspace{1.2 em}$\blacktriangleright$~\inserttocsubsection}
 
 % automate subtitle of each frame
 \makeatletter
-    \pretocmd\beamer@checkframetitle{\framesubtitle{\thesection\, \secname}}
+%\pretocmd\beamer@checkframetitle{\framesubtitle{\thesection\, \secname}}
 \makeatother
 
 % avoid numbering of frames that are breaked into multiply slides
@@ -195,25 +195,25 @@
 % at the begining of section, add table of contents with the current section highlighted
 \AtBeginSection[]
 {
-    \begingroup
-    \themecolor{blue}
-    \begin{frame}{Table of Contents}
-        \tableofcontents[currentsection]
-    \end{frame}
-    \endgroup
+  \begingroup
+  \themecolor{blue}
+  \begin{chapter}[./images/titleimage.png]{white}{Übersicht}
+     \tableofcontents[currentsection]
+  \end{chapter}
+  \endgroup
 }
 
 % at the beginning of subsection, add subsection title page
 \AtBeginSubsection[]
 {
-    \begin{frame}{\,}{\thesection\, \secname}
-        \fontfamily{ptm}\selectfont
-        \centering\textsl{\textbf{\textcolor{aracomblue}{
-            \large Section \thesection.\thesubsection%
-            \vskip15pt
-            \LARGE \subsecname%
+  \begin{frame}{\,}{\thesection\, \secname}
+    \fontfamily{ptm}\selectfont
+    \centering\textsl{\textbf{\textcolor{aracomblue}{
+          \large Section \thesection.\thesubsection%
+          \vskip15pt
+          \LARGE \subsecname%
         }}}
-    \end{frame}
+  \end{frame}
 }
 
 % code bolck setting
@@ -223,24 +223,24 @@
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
 \lstdefinestyle{mystyle}{
-    % backgroundcolor=\color{backcolour},
-    commentstyle=\color{aracomblue},
-    keywordstyle=\color{magenta},
-    numberstyle=\tiny\color{codegray},
-    stringstyle=\color{codepurple},
-    basicstyle=\ttfamily\scriptsize,
-    breakatwhitespace=false,
-    breaklines=true,
-    captionpos=b,
-    keepspaces=true,
-    numbers=left,
-    numbersep=5pt,
-    showspaces=false,
-    showstringspaces=false,
-    showtabs=false,
-    tabsize=4,
-    xleftmargin=10pt,
-    xrightmargin=10pt,
+  % backgroundcolor=\color{backcolour},
+  commentstyle=\color{aracomblue},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\scriptsize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=4,
+  xleftmargin=10pt,
+  xrightmargin=10pt,
 }
 
 \lstset{style=mystyle}
@@ -248,18 +248,18 @@
 % NEW COMMANDS
 
 % set colored hyperlinks command
-\newcommand{\hrefcol}[2]{\textcolor{aracomblue}{\href{#1}{#2}}}
+\newcommand{\hrefcol}[2]{\textcolor{aracomgrey}{\href{#1}{#2}}}
 \newcommand{\hlinkcol}[1]{\hrefcol{#1}{#1}}
 
 
 % centering paragraph statement
 \newcommand{\centerstate}[1]{
-    \centering
-    \begin{columns}
-        \begin{column}{0.8\textwidth}
-            #1
-        \end{column}
-    \end{columns}
+  \centering
+  \begin{columns}
+    \begin{column}{0.8\textwidth}
+      #1
+    \end{column}
+  \end{columns}
 }
 
 % colored textbf
@@ -269,28 +269,28 @@
 
 % about page
 \newcommand{\aboutpage}[2]{
-    \begingroup
-    \themecolor{blue}
-    \begin{frame}[c]{#1}{\,}
-        \centering
-        \begin{minipage}{\textwidth}
-            \usebeamercolor[fg]{normal text}
-            \centering
-            \Large \textsl{\normalsize #2}
-        \end{minipage}
-    \end{frame}
-    \endgroup
+  \begingroup
+  \themecolor{blue}
+  \begin{frame}[c]{#1}{\,}
+    \centering
+    \begin{minipage}{\textwidth}
+      \usebeamercolor[fg]{normal text}
+      \centering
+      \Large \textsl{\normalsize #2}
+    \end{minipage}
+  \end{frame}
+  \endgroup
 }
 
 % bibliography page
 \newcommand{\bibliographpage}{
-    \section{References}
+  \section{References}
 
-    \begingroup
-    \themecolor{blue}
-    \begin{frame}[allowframebreaks]{References}{\,}
-        \tiny
-        \printbibliography[heading=none]
-    \end{frame}
-\endgroup
+  \begingroup
+  \themecolor{blue}
+  \begin{frame}[allowframebreaks]{References}{\,}
+    \tiny
+    \printbibliography[heading=none]
+  \end{frame}
+  \endgroup
 }
