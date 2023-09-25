@@ -1,0 +1,3 @@
+[submodule "hackathon/dep/hsemotion"]
+	path = hackathon/dep/hsemotion
+	url = git@github.com:HSE-asavchenko/hsemotion.git
