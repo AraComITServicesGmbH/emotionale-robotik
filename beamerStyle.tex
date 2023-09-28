@@ -31,7 +31,7 @@
 \setbeamercolor{block body}{fg=white,bg=aracomblue}
 
 \newcommand{\themecolor}[1]{
-  \setbeamercolor{normal text}{fg=darkgray,bg=white}
+  \setbeamercolor{normal text}{fg=white,bg=darkgray}
   \setbeamercolor{structure}{fg=aracomblue}
   \setbeamercolor{block title}{fg=aracomblue,bg=aracomgrey}
   \setbeamercolor{block body}{fg=darkgray,bg=aracomgrey}
@@ -39,14 +39,14 @@
 
 \themecolor{white}
 \setbeamercolor{title}{fg=aracomblue}
-\setbeamercolor{author}{fg=black}
-\setbeamercolor{date}{fg=black}
+\setbeamercolor{author}{fg=white}
+\setbeamercolor{date}{fg=white}
 
 \setbeamerfont{author}{size=\scriptsize}
 \setbeamerfont{date}{size=\tiny}
 \setbeamerfont{title}{series=\bfseries, size=\fontsize{36}{40}}
 \setbeamerfont{subtitle}{series=\mdseries,size=\footnotesize}
-\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamerfont{frametitle}{family=\sffamily,series=\bfseries,size=\large}
 \setbeamerfont{framesubtitle}{series=\mdseries}
 \setbeamerfont{block title}{series=\centering, size=\small}
 \setbeamerfont{block body}{size=\scriptsize}
@@ -76,9 +76,10 @@
 
 % Define frame title and subtitle layout
 \setbeamertemplate{frametitle}{
-  \begin{beamercolorbox}[leftskip=2cm]{frametitle}%
+  \begin{beamercolorbox}[leftskip=-.5cm]{frametitle}%
+    \vspace*{.1cm}\\    
     \usebeamerfont{frametitle}\insertframetitle\\
-    \usebeamerfont{framesubtitle}\insertframesubtitle%
+    \noindent\textcolor{aracomblue}{\rule{1cm}{1mm}}
   \end{beamercolorbox}
 }
 
@@ -88,13 +89,20 @@
   \hspace{-12mm}% Pull back the box in an inelegant way - but it works!
   \begin{beamercolorbox}[wd=0.9\textwidth,sep=10pt,leftskip=8mm]{title}
     {\usebeamerfont{title}\inserttitle}
+    \arabar%
 
     {\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor}
-    
+
     {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate}
   \end{beamercolorbox}
   \setbeamertemplate{footline}{}
   \vspace{-.6ex}\hspace{0.56\paperwidth}\pgfuseimage{\logo}
+}
+
+\newcommand{\arabar}[1]{%
+  \newline
+  \noindent\textcolor{aracomblue}{\rule{2cm}{2mm}}
+  \newline\noindent
 }
 
 \newcommand{\TikzSplitSlide}[1]{%
@@ -133,11 +141,14 @@
   }
   \ifstrempty{#1}{}{\setbeamertemplate{background}{\TikzSplitSlide{#1}}}
   \setbeamertemplate{frametitle}{%
-    \vspace*{8ex}
-    \begin{beamercolorbox}[wd=0.45\textwidth]{frametitle}
-      \usebeamerfont{frametitle}\insertframetitle\\
+    \vspace*{2cm}
+    \vfill
+    \centering
+    \begin{beamercolorbox}[wd=0.55\textwidth,center,shadow=true,rounded=true]{frametitle}
+      \usebeamerfont{title}\insertframetitle\\
       \usebeamerfont{framesubtitle}\insertframesubtitle%
     \end{beamercolorbox}
+    \vfill
   }
   \begin{frame}{#3}
     \hspace*{0.05\textwidth}%
@@ -191,12 +202,11 @@
 \setbeamertemplate{frametitle continuation}{}
 
 % at the begining of section, add table of contents with the current section highlighted
-\AtBeginSection[]
-{
+\AtBeginSection[]{
   \begingroup
   \themecolor{blue}
-  \begin{chapter}[./images/titleimage.png]{white}{Übersicht}
-     \tableofcontents[currentsection]
+  \begin{chapter}[./images/titleimage.png]{black!90}{\insertsectionhead}
+   %\tableofcontents[currentsection]
   \end{chapter}
   \endgroup
 }
@@ -214,7 +224,7 @@
   \end{frame}
 }
 
-% code bolck setting
+% code block setting
 \definecolor{codegreen}{RGB}{101,218,120}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
