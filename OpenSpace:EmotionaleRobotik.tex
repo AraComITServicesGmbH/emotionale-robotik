@@ -1,17 +1,19 @@
 %%%
-%%%        Project: AraCom - Emotionale Robotik
-%%%    Description: Introduction paper to emotional robotics
-%%%        Version: 1.0
-%%%         Author: Robert Jeutter <robert.jeutter@aracom.de>
-%%%     Maintainer: Robert Jeutter <robert.jeutter@aracom.de>
+%%%    Project: AraCom - Emotionale Robotik
+%%%  Description: Introduction paper to emotional robotics
+%%%    Version: 1.0
+%%%   Author: Robert Jeutter <robert.jeutter@aracom.de>
+%%%   Maintainer: Robert Jeutter <robert.jeutter@aracom.de>
 %%%  Creation-Date: 24.05.2023
-%%%      Copyright: (c) 2023 Robert Jeutter
+%%%  Copyright: (c) 2023 Robert Jeutter
 %%%
 
 \documentclass[aspectratio=169]{beamer}
 \input{./beamerStyle.tex}
+\usepackage{tikz}
+\usetikzlibrary{mindmap, arrows.meta, automata, calc, positioning, quotes}
 
-\title{Emotionale Robotik}
+\title{BarCamp: Emotionale Robotik}
 \subtitle{Herausforderungen und ethische Überlegungen}
 \author{Robert Jeutter}
 \date{05. Oktober 2023}
@@ -21,23 +23,119 @@
 \maketitle
 
 \section{Über uns}
-\begin{frame}{über uns}
+\begin{frame}{Über uns}
   \begin{columns}
     \begin{column}{0.45\textwidth}
       \begin{figure}[h]
         \centering
-        \includegraphics[width=\linewidth]{images/robert_jeutter.jpeg}
-        Robert Jeutter, 25, Softwareentwickler, Teilnehmer und Volunteer am RoboCup seit 2008
+        \includegraphics[width=.7\linewidth]{images/robert.png}\\
+        \textbf{Robert Jeutter}, 25,\\
+        Softwareentwickler,\\
+        \scriptsize{Schwerpunkte maschinelles Lernen und Mensch-Maschine-Interaktion}
       \end{figure}
     \end{column}
     \begin{column}{0.45\textwidth}
-      %\includegraphics[width=\linewidth]{images/dennis_eisermann.jpeg}
-      Dennis Eisermann, 24, Softwareentwickler,
+      \includegraphics[width=.7\linewidth]{images/dennis.png}\\
+      \textbf{Dennis Eisermann}, 24,\\
+      Softwareentwickler \& Student,\\
+      \scriptsize{Schwerpunkte maschinelles Lernen und IT Security}
     \end{column}
   \end{columns}
 \end{frame}
-\begin{frame}{die AraCom IT Service GmbH}
+\begin{frame}{AraCom}
+  \includegraphics[width=.6\linewidth]{images/AraCom-Logo-black.png}
+  IT Service GmbH\\
+  der Spezialist für maßgeschneiderte Software\\
+  Hauptsitz in Gersthofen, weitere in München, Stuttgart und Bamberg\\
+  bietet Spaß, Ausbildungsplätze \& spannende Projekte
+\end{frame}
 
+\section{Bar Camp}
+\begin{frame}\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[scale=0.5]
+      \node at (-7,7) [scale=1.5, color=gray] {Roboter in der Arbeitswelt};
+      \node at (4,7) [scale=1.5, color=blue!50!white] {Zukunft};
+      \node at (-5,6) [scale=1.5, color=purple] {Gefahren};
+      \node at (4,6) [scale=1.5, color=olive] {Unterhaltungsindustrie};
+      \node at (-7,5) [scale=1.5, color=teal] {Therapie};
+      \node at (7,5) [scale=1.5, color=violet] {Automatisierung};
+      \node at (-9,4) [scale=1.5, color=lime!50!cyan] {Ethische Herausforderungen};
+      \node at (7,4) [scale=1.5, color=yellow!30!green] {Roboter in Gesellschaft};
+      \node at (-6,3) [scale=2, color=red] {Emotionen interpretieren};
+      \node at (6,3) [scale=1.5, color=brown] {Technologie};
+      \node at (-10,2) [scale=1.5, color=pink] {Roboter in der Bildung};
+      \node at (6,2) [scale=2, color=orange] {Grenzen emot. Robotik};
+      \node at (-10,1) [scale=1.5, color=olive] {Forschung};
+      \node at (10,1) [scale=1.5, color=cyan] {Entwicklung};
+      \node at (0,0) [scale=2.5, color=blue] {emotionale Robotik};
+      \node at (-10,-1) [scale=1.5, color=magenta] {Innovation};
+      \node at (5,-1) [scale=1.5, color=lime!50!cyan] {Gesundheitswesen};
+      \node at (-10,-2) [scale=1.5, color=violet] {KI und Emotionen};
+      \node at (5,-2) [scale=1.5, color=red] {Datenschutz};
+      \node at (-6,-3) [scale=2, color=green] {Psychologie};
+      \node at (6,-3) [scale=1.5, color=purple] {Vorteile emot. Robotik};
+      \node at (-10,-4) [scale=1.5, color=pink] {echte Emotionen};
+      \node at (8,-4) [scale=1.5, color=blue!50!white] {Emotionen erkennen};
+      \node at (-8,-5) [scale=1.5, color=magenta] {Anwendungen für Emotionen};
+      \node at (5,-5) [scale=1.5, color=yellow!30!green] {Interaktion};
+      \node at (2,-6) [scale=1.5, color=red] {Mensch-Roboter-Interaktion};
+      \node at (-9,-6) [scale=1.5, color=gray] {Lernen};
+      \node at (-9,-7) [scale=1.5, color=teal] {Krisensituationen};
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}[draw, align=center, node distance = 1.5cm and 1.8cm, on grid]
+      \begin{scope}[]
+        \node (center) [fill=blue!30] {Emotional\\Robotics};
+        \node (n1) [above left=of center, fill=red!30]  {Pflege};
+        \node (n2) [above right=of center, fill=green!30]  {Kunden-\\betreuung};
+        \node (n3) [below left=of center, fill=orange!30]  {Sensoren};
+        \node (n4) [below right=of center, fill=purple!30]  {Katastrophen-\\hilfe};
+
+        \node (n11) [left =3cm  of n1, fill=red!20]  {Reha-\\bilitation};
+        \node (n12) [above left=2cm  and 3cm  of n1, fill=red!20]  {Kinder-\\betreuung};
+        \node (n13) [above =2cm  of n1, fill=red!20]  {Alten-\\pflege};
+
+        \node (n21) [above =2cm of n2, fill=green!20]  {Kommuni-\\kation};
+        \node (n22) [above right=2cm  and 3cm  of n2, fill=green!20]  {Konflikt-\\lösung};
+        \node (n23) [right =3cm  of  n2, fill=green!20]  {Beratung};
+
+        \node (n31) [below=2cm of n3, fill=orange!20]  {Bewegungs-\\erkennung};
+        \node (n32) [below left=2cm  and 3cm  of n3, fill=orange!20]  {Gesichts-\\erkennung};
+        \node (n33) [left=3cm  of n3, fill=orange!20]  {Sprach-\\erkennung};
+
+        \node (n41) [below=2cm of n4, fill=purple!20]  {Rettungs-\\roboter};
+        \node (n42) [below right=2cm  and 3cm  of n4, fill=purple!20]  {Krisen-\\management};
+        \node (n43) [right=3cm  of n4, fill=purple!20]  {Notfall-\\management};
+
+        % Draw arrows from center to next node to outer node
+        \draw[->] (center) -- (n1);
+        \draw[->] (n1) -- (n11);
+        \draw[->] (n1) -- (n12);
+        \draw[->] (n1) -- (n13);
+
+        \draw[->] (center) -- (n2);
+        \draw[->] (n2) -- (n21);
+        \draw[->] (n2) -- (n22);
+        \draw[->] (n2) -- (n23);
+
+        \draw[->] (center) -- (n3);
+        \draw[->] (n3) -- (n31);
+        \draw[->] (n3) -- (n32);
+        \draw[->] (n3) -- (n33);
+
+        \draw[->] (center) -- (n4);
+        \draw[->] (n4) -- (n41);
+        \draw[->] (n4) -- (n42);
+        \draw[->] (n4) -- (n43);
+      \end{scope}
+    \end{tikzpicture}
+  \end{figure}
 \end{frame}
 
 \begin{frame}[c]{}
@@ -57,19 +155,10 @@
   \begin{minipage}{\textwidth}
     \usebeamercolor[fg]{normal text}
     \centering
-    \Huge \[\mathcal Q \& \mathcal A\]
+    \Huge Thank You\\
     \Large \atextsl{
-      Vielen Dank für eure Aufmerksamkeit! \\
-      Feedback und Diskussionen sind sehr willkommen
+      Vielen Dank für eure \\Fragen und Diskussionen
     }
   \end{minipage}
 \end{frame}
-
-\section{Quellen \& Literatur}
-\begin{frame}[allowframebreaks]{Quellen \& Literatur}
-  \scriptsize
-  \bibliography{../bibliography}
-  \bibliographystyle{unsrt}
-\end{frame}
-
 \end{document}
