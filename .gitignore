@@ -302,3 +302,6 @@ TSWLatexianTemp*
 
 # Ignore python environment from hackathon
 /hackathon/env/
+
+#Ignore Python Byte code
+*pyc
