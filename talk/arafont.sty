@@ -1,0 +1,54 @@
+\ProvidesPackage{arafont}[2023/08/08]
+\usepackage{iftex}
+
+\ifpdftex
+    % pdfLaTeX does not support directly embedding OpenType fonts
+    % We will therefore use fonts from the LaTeX font catalogue
+    % https://tug.org/FontCatalogue
+    % These fonts are pdfLaTeX ready
+    % We use OpenSans as Sans Serif and Caladea as the Serif font
+    \usepackage[defaultsans,scale=0.9]{opensans} % replaces default sans-serif font
+    \usepackage{opensans} % replaces default serif font
+    \usepackage[T1]{fontenc}
+\fi
+
+\ifxetex
+    % XeLaTeX directly supports OpenType fonts
+    % Use XeLaTeX if you would like more options with fonts
+    \usepackage{fontspec}
+    % The commands \setsansfont, \setmainfont and \setmonofont are provided by the fontspec package.
+    % These commands provide a very fine grained control over fonts.
+    % By default Beamer uses Sans-Serif mode and the font specified in \setsansfont is the font that will be applied in most places.
+    \setsansfont{Poppins}[
+        Path=../../images/fonts/,
+        Scale=0.9,
+        Extension = .ttf,
+        UprightFont=*-Regular,
+        BoldFont=*-Bold,
+        ItalicFont=*-Regular,
+        BoldItalicFont=*-Black
+    ]
+    % Other less common font styles are SlantedFont, BoldSlantedFont, SwashFont and BoldSwashFont.
+    % If your font also provides additional faces (e.g. ExtraLight, etc), fontspec also supports them.
+    % Please see the fontspec documentation Section 4.3 (Choosing additional NFSS font faces) for details.
+
+    % This is used if we use \usefonttheme{serif} in main.tex
+    % With the default \usefonttheme[onlymath]{serif}, this will control the font used for math
+    \setmainfont{Poppins}[
+        Path=../../images/fonts/,
+        Scale=0.9,
+        Extension = .ttf,
+        UprightFont=*-Regular,
+        BoldFont=*-Bold,
+        ItalicFont=*-Black,
+        BoldItalicFont=*-BoldItalicFont
+    ]
+
+    % This controls verbatim text (i.e. code)
+    \setmonofont{Poppins}[
+        Path=../../images/fonts/,
+        Scale=0.9,
+        Extension = .ttf,
+        UprightFont=*-Regular
+    ]
+\fi
