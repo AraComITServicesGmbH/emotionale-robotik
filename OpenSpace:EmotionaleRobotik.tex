@@ -89,29 +89,29 @@
 \begin{frame}
   \begin{figure}
     \centering
-    \begin{tikzpicture}[draw, align=center, node distance = 1.5cm and 1.8cm, on grid]
+    \begin{tikzpicture}[draw, align=center, node distance = 1.5cm and 1.8cm, rounded corners=0.2cm, on grid]
       \begin{scope}[]
-        \node (center) [fill=blue!30] {Emotional\\Robotics};
-        \node (n1) [above left=of center, fill=red!30]  {Pflege};
-        \node (n2) [above right=of center, fill=green!30]  {Kunden-\\betreuung};
-        \node (n3) [below left=of center, fill=orange!30]  {Sensoren};
-        \node (n4) [below right=of center, fill=purple!30]  {Katastrophen-\\hilfe};
+        \node (center) [fill=blue] {Emotional\\Robotics};
+        \node (n1) [above left=of center, fill=red]  {Pflege};
+        \node (n2) [above right=of center, fill=green]  {Kunden-\\betreuung};
+        \node (n3) [below left=of center, fill=orange]  {Sensoren};
+        \node (n4) [below right=of center, fill=purple]  {Katastrophen-\\hilfe};
 
-        \node (n11) [left =3cm  of n1, fill=red!20]  {Reha-\\bilitation};
-        \node (n12) [above left=2cm  and 3cm  of n1, fill=red!20]  {Kinder-\\betreuung};
-        \node (n13) [above =2cm  of n1, fill=red!20]  {Alten-\\pflege};
+        \node (n11) [left =3cm  of n1, fill=red]  {Reha-\\bilitation};
+        \node (n12) [above left=2cm  and 3cm  of n1, fill=red]  {Kinder-\\betreuung};
+        \node (n13) [above =2cm  of n1, fill=red]  {Alten-\\pflege};
 
-        \node (n21) [above =2cm of n2, fill=green!20]  {Kommuni-\\kation};
-        \node (n22) [above right=2cm  and 3cm  of n2, fill=green!20]  {Konflikt-\\lösung};
-        \node (n23) [right =3cm  of  n2, fill=green!20]  {Beratung};
+        \node (n21) [above =2cm of n2, fill=green]  {Kommuni-\\kation};
+        \node (n22) [above right=2cm  and 3cm  of n2, fill=green]  {Konflikt-\\lösung};
+        \node (n23) [right =3cm  of  n2, fill=green]  {Beratung};
 
-        \node (n31) [below=2cm of n3, fill=orange!20]  {Bewegungs-\\erkennung};
-        \node (n32) [below left=2cm  and 3cm  of n3, fill=orange!20]  {Gesichts-\\erkennung};
-        \node (n33) [left=3cm  of n3, fill=orange!20]  {Sprach-\\erkennung};
+        \node (n31) [below=2cm of n3, fill=orange]  {Bewegungs-\\erkennung};
+        \node (n32) [below left=2cm  and 3cm  of n3, fill=orange]  {Gesichts-\\erkennung};
+        \node (n33) [left=3cm  of n3, fill=orange]  {Sprach-\\erkennung};
 
-        \node (n41) [below=2cm of n4, fill=purple!20]  {Rettungs-\\roboter};
-        \node (n42) [below right=2cm  and 3cm  of n4, fill=purple!20]  {Krisen-\\management};
-        \node (n43) [right=3cm  of n4, fill=purple!20]  {Notfall-\\management};
+        \node (n41) [below=2cm of n4, fill=purple]  {Rettungs-\\roboter};
+        \node (n42) [below right=2cm  and 3cm  of n4, fill=purple]  {Krisen-\\management};
+        \node (n43) [right=3cm  of n4, fill=purple]  {Notfall-\\management};
 
         % Draw arrows from center to next node to outer node
         \draw[->] (center) -- (n1);
