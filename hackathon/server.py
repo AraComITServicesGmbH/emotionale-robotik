@@ -76,7 +76,7 @@ def update_to_client(client, address, queue):
                 time_elapsed = time.time()
                 (frame_bgr, emotions) = queue.get()
                 send_image_and_emotions(client, address, frame_bgr, emotions)
-    except BrokenPipeError:
+    except Exception:
         print_disconnect(address)
         client.close()
 
