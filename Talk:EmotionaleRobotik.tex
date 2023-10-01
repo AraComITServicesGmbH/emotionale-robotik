@@ -25,13 +25,13 @@
   \begin{columns}
     \begin{column}{0.4\textwidth}
       \includegraphics[height=5cm]{images/robert.png}\\
-      \textbf{Robert Jeutter}, 25, \arabar{}
+      \textbf{Robert Jeutter}, 25 \arabar{}
       Softwareentwickler,\\
       \scriptsize{Schwerpunkte maschinelles Lernen und Mensch-Maschine-Interaktion}
     \end{column}
     \begin{column}{0.4\textwidth}
       \includegraphics[height=5cm]{images/dennis.png}\\
-      \textbf{Dennis Eisermann}, 24, \arabar{}
+      \textbf{Dennis Eisermann}, 24 \arabar{}
       Softwareentwickler \& Masterand,\\
       \scriptsize{Schwerpunkte maschinelles Lernen und IT Security}
     \end{column}
@@ -95,7 +95,7 @@
 \end{frame}
 
 \begin{frame}{Sponsor des RoboCup}
-  \includegraphics[height=30px]{images/AraCom-Logo-blue.png} sponsort
+  \includegraphics[height=30px]{images/AraCom-Logo-blue.png} {\LARGE \&} \hspace{.2cm}
   \includegraphics[height=35px]{images/RCJ_Logo.png}
   \begin{columns}
     \begin{column}{0.45\textwidth}
@@ -155,20 +155,26 @@
 \end{frame}
 
 \begin{frame}{Emotionen auszudrücken}
-
   \begin{itemize}
     \item<1-> Gesichtsausdrücke, z.B. Lächeln oder Stirnrunzeln.
     \item<2-> Gesten, z.B. Klatschen oder Zeigen.
     \item<3-> Körpersprache, z.B. Körperhaltung oder Nähe.
     \item<4-> Stimmklang, z.B. Schreien oder Flüstern.
   \end{itemize}
-
-  \onslide<1-2>{\centering\includegraphics[width=.8\textwidth]{Facial-expression-continua.png}}
-  %\caption{facial Expressions~\cite{facialExpressionRecognition} }
-
-  \onslide<3-4>{\centering\includegraphics[width=.7\textwidth]{Canine-Body-Language-transparent.png}}
-  % \caption{Dog Language~\cite{doggieLanguage}
-
+  \only<1-2>{
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=.7\textwidth]{Facial-expression-continua.png}
+      \caption{Facial Expressions, Graeme Fairchild et al., \href{https://www.researchgate.net/figure/Facial-expression-continua-used-in-the-Emotion-Hexagon-task-Running-from-left-to-right_fig1_24418236}{researchgate.net}}
+    \end{figure}
+  }
+  \only<3-4>{
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=.6\textwidth]{Canine-Body-Language.png}
+      \caption{Doggie Language, Lili Chin, \href{www.doggiedrawings.net}{doggiedrawings.net}}
+    \end{figure}
+  }
 \end{frame}
 
 \begin{frame}{Definition --- Soziale und Emotionale Intelligenz}
@@ -188,11 +194,13 @@
 \section{Emotionen in der Robotik}
 \begin{frame}{Verschmelzende Domänen bei emotionaler Robotik}
   \begin{center}
-    Robotik\\
-    +\\
-    Psychologie\\
-    +\\
-    Künstlicher Intelligenz
+    \LARGE\textbf{
+      Robotik\\
+      +\\
+      Psychologie\\
+      +\\
+      Künstliche Intelligenz
+    }
   \end{center}
 \end{frame}
 
@@ -202,6 +210,7 @@
     \item Erkennen menschlicher Emotionen
     \item Reagieren und Interagieren auf Basis dieser Emotionen
   \end{itemize}
+  \vspace*{.5cm}
 
   \textbf{Aktueller Stand}
   \begin{itemize}
@@ -213,12 +222,13 @@
 
 \begin{frame}{Ziele und Vorteile der Emotionalen Robotik}
   \begin{columns}
-    \begin{column}{0.7\textwidth}
+    \begin{column}{0.6\textwidth}
       \textbf{Hauptziele}
       \begin{itemize}
         \item Vertiefung der Mensch-Maschine-Interaktionen
         \item Personalisierte Benutzererfahrungen
       \end{itemize}
+      \vspace*{.5cm}
 
       \textbf{Wesentliche Vorteile}
       \begin{itemize}
@@ -228,10 +238,10 @@
         \item Verbesserung der Lebensqualität
       \end{itemize}
     \end{column}
-    \begin{column}{0.3\textwidth}
+    \begin{column}{0.4\textwidth}
       \begin{figure}[h]
         \centering
-        \includegraphics[width=\textwidth]{andy-kelly-0E_vhMVqL9g-unsplash.png}
+        \includegraphics[width=\linewidth]{andy-kelly-0E_vhMVqL9g-unsplash.png}
         \caption{Mensch \& Roboter Interagieren}
       \end{figure}
     \end{column}
@@ -240,17 +250,17 @@
 
 \begin{frame}{Risiken und Bedenken}
   \begin{columns}
-    \begin{column}{0.7\textwidth}
+    \begin{column}{0.6\textwidth}
       \begin{itemize}
         \item Datenschutz und -sicherheit
         \item Emotionale Manipulation durch Maschinen
         \item Potenzielle Voreingenommenheiten bei der Emotionserkennung
       \end{itemize}
     \end{column}
-    \begin{column}{0.3\textwidth}
+    \begin{column}{0.4\textwidth}
       \begin{figure}[h]
         \centering
-        \includegraphics[width=\textwidth]{aideal-hwa-OYzbqk2y26c-unsplash.png}
+        \includegraphics[width=\linewidth]{aideal-hwa-OYzbqk2y26c-unsplash.png}
         \caption{Unschlagbare KI?}
       \end{figure}
     \end{column}
@@ -260,7 +270,7 @@
 \section{Einsatz emotionaler Robotik}
 \begin{frame}{Anwendungen und Einsatzmöglichkeiten}
   \begin{columns}
-    \begin{column}{0.7\textwidth}
+    \begin{column}{0.6\textwidth}
       \textbf{Aktuelle Einsatzbereiche}
       \begin{itemize}
         \item Therapeutische Umgebungen
@@ -277,10 +287,10 @@
         \item Personalisiertes Tutoring
       \end{itemize}
     \end{column}
-    \begin{column}{0.3\textwidth}
+    \begin{column}{0.4\textwidth}
       \begin{figure}[h]
         \centering
-        \includegraphics[width=\textwidth]{kaigorobot00.png}
+        \includegraphics[width=\linewidth]{kaigorobot00.png}
         \caption{Therapie Roboter schon jetzt im Einsatz}
       \end{figure}
     \end{column}
@@ -308,14 +318,6 @@
     \item Richtlinien und Vorsichtsmaßnahmen für Unternehmen
     \item Akzeptanz von maschinellen Lösungen schaffen
     \item Differenz zwischen Mensch und Maschine
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{Zukünftige Horizonte}
-  \begin{itemize}
-    \item Fortgeschrittene Modelle, die kulturelle Unterschiede berücksichtigen
-    \item Roboter, die künstliche Empathie zeigen
-    \item Generierung und Ausdruck einzigartiger Roboter-,,Emotionen''
   \end{itemize}
 \end{frame}
 
@@ -374,11 +376,19 @@
 \end{frame}
 
 \section{Zusammen-fassung}
+\begin{frame}{Zukünftige Horizonte}
+  \begin{itemize}
+    \item Fortgeschrittene Modelle, die kulturelle Unterschiede berücksichtigen
+    \item Roboter, die künstliche Empathie zeigen
+    \item Generierung und Ausdruck einzigartiger Roboter-,,Emotionen''
+  \end{itemize}
+\end{frame}
 \begin{frame}{Schlussfolgerung und Schlüsselerkenntnisse}
   \begin{itemize}
-    \item Zusammenfassung des Potenzials und der Herausforderungen der emotionalen Robotik
-    \item Ermutigung zur weiteren Erkundung und zum Verständnis in diesem Bereich
-    \item Einladung zu Zusammenarbeiten und Diskussionen nach der Präsentation
+    \item großes Potenzial und viele Herausforderungen in emotionaler Robotik
+    \item Zukunftsträchtiges Forschungsgebiet
+    \item wird Einzug in viele Lebensbereiche nehmen
+    \item Einladung zu Zusammenarbeit und Diskussion nach der Präsentation
   \end{itemize}
 \end{frame}
 
@@ -386,19 +396,8 @@
   \begin{itemize}
     \item \textbf{Aracom IT Services GmbH} für die Unterstützung bei der Erstellung dieser Präsentation
     \item \textbf{Hackerkiste} für die Organisation dieses tollen Events
+    \item \textbf{Unsplash} für die schönen Bilder die wir in unserer Präsentation verwenden durften
   \end{itemize}
-\end{frame}
-
-\begin{frame}[c]{}
-  \centering
-  \begin{minipage}{\textwidth}
-    \usebeamercolor[fg]{normal text}
-    \centering
-    \Large \atextsl{Alle Folien als CC-BY-SA verfügbar auf}\\
-    \href{https://github.com/AraComITServicesGmbH/emotionale-robotik}{GitHub.com/AraComITServicesGmbH/emotionale-robotik}\\
-    \vspace{.4cm}
-    \includegraphics[width=.4\linewidth]{images/qrcode-repo.png}
-  \end{minipage}
 \end{frame}
 
 \begin{frame}[c]{}
@@ -414,11 +413,16 @@
   \end{minipage}
 \end{frame}
 
-\section{Quellen \& Literatur}
-\begin{frame}[allowframebreaks]{Quellen \& Literatur}
-  \scriptsize
-  \bibliography{../bibliography}
-  \bibliographystyle{unsrt}
+\begin{frame}[c]{}
+  \centering
+  \begin{minipage}{\textwidth}
+    \usebeamercolor[fg]{normal text}
+    \centering
+    \Large \atextsl{Alle Folien als CC-BY-SA verfügbar auf}\\
+    \href{https://github.com/AraComITServicesGmbH/emotionale-robotik}{GitHub.com/AraComITServicesGmbH/emotionale-robotik}\\
+    \vspace{.4cm}
+    \includegraphics[width=.4\linewidth]{images/qrcode-repo.png}
+  \end{minipage}
 \end{frame}
 
 \end{document}
