@@ -45,3 +45,4 @@ Die Vorträge und Diskussionen werden auf der [Hackerkiste](https://hackerkiste.
 
 # Contributors
 - [Wieerwill](https://www.github.com/wieerwill)
+- [DHE98](https://github.com/DJE98)
