@@ -47,7 +47,7 @@ def update_values(queue: Queue):
                 else:
                     queue.put((frame_bgr, emotions))
     finally:
-        capture.close()
+        capture.release()
 
 
 def update_to_clients(queue: Queue):
