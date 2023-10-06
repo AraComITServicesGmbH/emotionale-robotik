@@ -26,10 +26,13 @@ def update_from_server(queue: Queue):
             client_socket.connect((SERVER_IP, SERVER_PORT))
             print_connect()
             while True:
-                result = receive_image_and_emotions(client_socket)
-                if result is not None:
-                    queue.put(result)
-        except Exception: #Normally only if disconnect EOFError
+                try:
+                    result = receive_image_and_emotions(client_socket)
+                    if result is not None:
+                        queue.put(result)
+                except EOFError:
+                    pass
+        except Exception:
             print_disconnect()
             client_socket.close()
     time.sleep(1)
