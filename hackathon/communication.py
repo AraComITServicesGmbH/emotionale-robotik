@@ -6,7 +6,7 @@ from pickle import UnpicklingError
 
 def create_client_socket():
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 10000000)
+    client_socket.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 10000)
     return client_socket
 
 
@@ -26,7 +26,7 @@ def send_image_and_emotions(open_socket, address, photo, emotions):
 
 def receive_image_and_emotions(open_socket):
     try:
-        x = open_socket.recvfrom(1000000)
+        x = open_socket.recvfrom(10000)
         data = x[0]
         (data, emotions) = pickle.loads(data)
         photo = cv.imdecode(data, cv.IMREAD_COLOR)
