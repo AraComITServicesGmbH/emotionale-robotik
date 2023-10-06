@@ -1,0 +1,3 @@
+# Hackathon emotionale Robotik
+
+Wir haben einen Server entwickelt, welcher Emotionen anhand von Bildaufnahmen auswertet. Die IP-Adresse des Servers müsst ihr in der Config-Datei hinterlegen. Eure Aufgabe ist im Client in der Klasse OwnRobot passende Gesichtsausdrücke mit Pygame zu generieren. Hierzu könnt ihr euren Code in der Update-Funktion platzieren. Dort stehen euch das aktuelle Foto sowie die dazugehörigen erkannten Emotionen zur Verfügung. Ihr könnte den Parameter update_interval überschreiben, um die Geschwindigkeit der Aktualisierungen zu verändern. Der Client selbst lässt sich durch Ausführen der start_client.sh/.bat im root-Verzeichnis ausführen. Viel Spaß beim Coden.
