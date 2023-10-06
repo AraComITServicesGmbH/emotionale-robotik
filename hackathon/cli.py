@@ -8,14 +8,14 @@ def print_emotions(emotions):
 
 def print_connect(address=None):
     if address is None:
-        print(f"Connected")
+        print("Connected")
     else:
         print(f"Connected with: {address}")
     print_line()
     
 def print_disconnect(address=None):
     if address is None:
-        print(f"Disconnected")
+        print("Disconnected")
     else:
         print(f"Disconnected from: {address}")
     print_line()
