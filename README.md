@@ -2,6 +2,16 @@
 
  <p xmlns:cc="http://creativecommons.org/ns#" >Diese Arbeit ist Lizensiert unter <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">Attribution-ShareAlike 4.0 International<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"></a></p> 
 
+## Hackerkiste
+
+Die Vorträge und Diskussionen werden auf der [Hackerkiste](https://hackerkiste.de/) 2023 vorgestellt und gehalten.
+
+- Talk: [Emotionale Robotik - eine Einführung](./talk/Talk_EmotionaleRobotik.pdf), ca. 45 Minuten
+- OpenSpace: [Emotionale Robotik - Herausforderungen und ethische Überlegungen](./openspace/OpenSpace_EmotionaleRobotik.pdf), ca. 1 Stunde
+- Hackathon: [Emotionale Robotik - Emotionen selbst designt](./hackathon/README.MD), ca 6 Stunden
+
+## Einführung
+
 In den letzten Jahren hat sich die Robotik rasant entwickelt und Roboter sind zunehmend in der Lage, soziale Interaktionen mit Menschen auf eine neue Ebene zu bringen. Durch den Einsatz von fortschrittlichen Technologien können Roboter nicht nur menschenähnliche Fähigkeiten erlangen, sondern auch eine emotionale Verbindung zu Personen herstellen.
 
 Soziale und emotional befähigte Roboter haben das Potenzial, das Leben der Menschen in verschiedenen Bereichen zu bereichern. Ihr Zweck besteht darin, menschenähnliche Interaktionen zu ermöglichen und ein breites Spektrum an Aufgaben zu erfüllen. Durch die Integration von fortschrittlichen Komponenten können Roboter soziale Verbindungen herstellen, emotionale Unterstützung bieten und bei der Bewältigung von Alltagsaufgaben helfen.
@@ -36,13 +46,7 @@ Liste von eindeutig unterscheidbaren Gesichtsausdrücke basierend auf den zwei A
 9. **Konzentriert**: Augen leicht zusammengekniffen, Ohren parallel zur Kopfposition
 10. **Interessiert**: Augen weit geöffnet, Augenbrauen leicht angehoben, Ohren leicht nach vorne gedreht
 
-# Hackerkiste
-Die Vorträge und Diskussionen werden auf der [Hackerkiste](https://hackerkiste.de/) 2023 vorgestellt und gehalten.
+## Contributors
 
-- Talk: [Emotionale Robotik - eine Einführung](./talk/Talk_EmotionaleRobotik.pdf), ca. 45 Minuten
-- OpenSpace: [Emotionale Robotik - Herausforderungen und ethische Überlegungen](./openspace/OpenSpace_EmotionaleRobotik.pdf), ca. 1 Stunde
-- Hackathon: [Emotionale Robotik - Emotionen selbst designt](./hackathon/README.MD), ca 6 Stunden
-
-# Contributors
 - [Wieerwill](https://www.github.com/wieerwill)
 - [DHE98](https://github.com/DJE98)
