@@ -39,9 +39,9 @@ Liste von eindeutig unterscheidbaren Gesichtsausdrücke basierend auf den zwei A
 # Hackerkiste
 Die Vorträge und Diskussionen werden auf der [Hackerkiste](https://hackerkiste.de/) 2023 vorgestellt und gehalten.
 
-- Talk: [Emotionale Robotik - eine Einführung](./Talk%3AEmotionaleRobotik.pdf), ca. 45 Minuten
-- OpenSpace: [Emotionale Robotik - Herausforderungen und ethische Überlegungen](./OpenSpace%3AEmotionaleRobotik.pdf), ca. 1 Stunde
-- Hackathon: tba
+- Talk: [Emotionale Robotik - eine Einführung](./talk/Talk_EmotionaleRobotik.pdf), ca. 45 Minuten
+- OpenSpace: [Emotionale Robotik - Herausforderungen und ethische Überlegungen](./openspace/OpenSpace_EmotionaleRobotik.pdf), ca. 1 Stunde
+- Hackathon: [Emotionale Robotik - Emotionen selbst designt](./hackathon/README.MD), ca 6 Stunden
 
 # Contributors
 - [Wieerwill](https://www.github.com/wieerwill)
