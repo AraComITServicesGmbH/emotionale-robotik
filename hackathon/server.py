@@ -10,7 +10,7 @@ from vision import (
     check_and_print_cuda_available,
     ensure_camera_available,
     detect_and_filter_faces,
-    adjust_bounding_boxes,
+    sort_and_clip_values_from_bounding_boxes,
     predict_emotions_from_faces,
 )
 from cli import print_connect, print_disconnect, print_emotions
@@ -45,7 +45,7 @@ def update_values(queue: Queue):
                 _, frame_bgr = capture.read()
                 frame = cv.cvtColor(frame_bgr, cv.COLOR_BGR2RGB)
                 bounding_boxes = detect_and_filter_faces(mtcnn, frame)
-                bounding_boxes = adjust_bounding_boxes(
+                bounding_boxes = sort_and_clip_values_from_bounding_boxes(
                     bounding_boxes, frame.shape[0], frame.shape[1]
                 )
                 emotions = predict_emotions_from_faces(

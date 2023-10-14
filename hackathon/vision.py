@@ -57,7 +57,23 @@ def detect_and_filter_faces(mtcnn, frame, probability_threshold=0.9):
     return bounding_boxes
 
 
-def adjust_bounding_boxes(bounding_boxes, x_limit, y_limit):
+def sort_and_clip_values_from_bounding_boxes(bounding_boxes, x_limit, y_limit):
+    """
+    Sorts and clips bounding box values to ensure they are within specified limits.
+
+    Given a list of bounding boxes, this function:
+    1. Sorts the x and y coordinates within each bounding box to ensure x1 < x2 and y1 < y2.
+    2. Clips the x and y values of each bounding box to be within the specified limits.
+
+    Parameters:
+    - bounding_boxes (list of lists): A list of bounding boxes. Each bounding box should be a list 
+                                     of four numbers in the format: [x1, y1, x2, y2].
+    - x_limit (int): The maximum allowed value for the x-coordinates. Values above this will be clipped.
+    - y_limit (int): The maximum allowed value for the y-coordinates. Values above this will be clipped.
+
+    Returns:
+    - list of lists: A list of sorted and clipped bounding boxes. Each bounding box is in the format: [x1, y1, x2, y2].
+    """
     limited_bounding_boxes = []
     for bounding_box in bounding_boxes:
         box = bounding_box.astype(int)
@@ -77,6 +93,19 @@ def adjust_bounding_boxes(bounding_boxes, x_limit, y_limit):
 
 
 def predict_emotions_from_faces(emotion_recognizer, frame, bounding_boxes):
+    """
+    Given an image frame and bounding boxes corresponding to detected faces, this function extracts each face 
+    and uses the provided emotion recognizer to predict the emotion exhibited by each face.
+
+    Parameters:
+    - emotion_recognizer (Object): An object responsible for recognizing and predicting emotions
+    - frame (numpy.ndarray): A numpy array representing the image frame in which emotions need to be predicted.
+    - bounding_boxes (list of lists): A list of bounding boxes. Each bounding box should be a list 
+                                     of four numbers in the format: [x1, y1, x2, y2].
+
+    Returns:
+    - list: A list of predicted emotions corresponding to each bounding box.
+    """
     emotions = []
     for bounding_box in bounding_boxes:
         x1, y1, x2, y2 = bounding_box[0:4]
