@@ -31,10 +31,10 @@ def ensure_camera_available(capture):
         exit()
 
 
-def detect_and_filter_faces(mtcnn, frame):
+def detect_and_filter_faces(mtcnn, frame, probability_threshold=0.9):
     bounding_boxes, probabilities = mtcnn.detect(frame, landmarks=False)
     if bounding_boxes is not None:
-        bounding_boxes = bounding_boxes[probabilities > 0.9]
+        bounding_boxes = bounding_boxes[probabilities > probability_threshold]
     else:
         bounding_boxes = []
     return bounding_boxes
