@@ -2,6 +2,12 @@ import torch
 import numpy as np
 
 def check_and_print_cuda_available():
+    """
+    Checks if CUDA is available using PyTorch and prints a corresponding message.
+
+    Returns:
+        str: "cuda" if CUDA is available, otherwise "cpu".
+    """
     use_cuda = torch.cuda.is_available()
     if use_cuda:
         print("Cuda will be used for calculation")
