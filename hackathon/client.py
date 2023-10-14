@@ -33,22 +33,30 @@ def update_robot(queue: Queue, robot: Robot):
 
 
 def update_from_server(queue: Queue):
+    """
+    Continuously attempt to connect to the server and update the provided 
+    queue with image and emotion data received from the server.
+    If the connection is lost, it will attempt to reconnect.
+
+    Parameters:
+    - queue (Queue): A queue to store the received image and emotion data.
+
+    Note:
+    This function runs in an infinite loop and should typically be executed in a separate thread.
+    """
     while True:
         client_socket = create_client_socket()
         try:
             client_socket.connect((SERVER_IP, SERVER_PORT))
             print_connect()
             while True:
-                try:
-                    result = receive_image_and_emotions(client_socket)
-                    if result is not None:
-                        queue.put(result)
-                except EOFError:
-                    pass
-        except Exception:
+                result = receive_image_and_emotions(client_socket)
+                if result is not None:
+                    queue.put(result)
+        except Exception: #Normally only if disconnect EOFError
             print_disconnect()
             client_socket.close()
-    time.sleep(1)
+        time.sleep(1)
 
 
 if __name__ == "__main__":
