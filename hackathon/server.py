@@ -91,7 +91,19 @@ def update_to_clients(queue: Queue):
 
 
 def update_to_client(client, address, queue):
-    
+    """
+    Sends updates to a client at a specified rate defined by UPRDATE_RATE 
+    using frame in BGR format and emotions from a queue.
+
+    The function continues to serve the client indefinitely until an exception 
+    occurs, such as a connection disruption. Finally it notifies about the client's
+    disconnection and closes the client socket.
+
+    Parameters:
+    - client (socket): The socket object representing the client connection.
+    - address (tuple): A tuple containing the client's IP address and port number.
+    - queue (Queue): A queue object from which frames (in BGR format) and emotions are fetched.
+    """
     try:
         previous_time = 0
         print_connect(address)
