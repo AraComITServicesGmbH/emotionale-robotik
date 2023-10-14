@@ -44,10 +44,20 @@ def send_image_and_emotions(open_socket, photo, emotions):
     x_as_bytes = pickle.dumps((buffer, emotions))
     open_socket.sendall(x_as_bytes)
 
-    
-
 
 def receive_image_and_emotions(open_socket):
+    """
+    Receives an image and emotions from an open socket.
+    
+    Args:
+        open_socket: A TCP socket that is open and connected to the sender.
+
+    Returns:
+        A tuple containing the received image and emotions, or `None` if an error occurred.
+
+    Raises:
+        UnpicklingError: If the received data cannot be unpickled.
+    """
     try:
         x = open_socket.recvfrom(100000)
         data = x[0]
