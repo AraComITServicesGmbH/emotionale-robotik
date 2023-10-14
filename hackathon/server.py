@@ -63,6 +63,19 @@ def update_values(queue: Queue):
 
 
 def update_to_clients(queue: Queue):
+    """
+    Listens for incoming client connections and spawns a new thread 
+    to handle updates for each connected client.
+    
+    The function establishes a server socket and listens for incoming client 
+    connections on the specified SERVER_IP and SERVER_PORT. 
+
+    The server socket will continue to listen for connections until an external 
+    interruption. On termination, the server socket is closed gracefully.
+
+    Parameters:
+    - queue (Queue): A queue object to facilitate inter-thread communication.
+    """
     server_socket = create_server_socket(SERVER_IP, SERVER_PORT)
     
     try:
