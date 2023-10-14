@@ -40,7 +40,7 @@ def create_server_socket(ip, port):
 
 
 def send_image_and_emotions(open_socket, photo, emotions):
-     """Sends an image and emotions over a socket.
+    """Sends an image and emotions over a socket.
 
     Parameters:
     - open_socket (socket.socket): An open socket over which the data should be sent. 
