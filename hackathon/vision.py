@@ -32,6 +32,23 @@ def ensure_camera_available(capture):
 
 
 def detect_and_filter_faces(mtcnn, frame, probability_threshold=0.9):
+    """
+    Detects faces in a given frame using the MTCNN detector and filters them based on a probability threshold.
+
+    This function first detects faces in the frame with their associated probabilities using the MTCNN model.
+    Then, it filters out bounding boxes whose associated probabilities are below a specified threshold.
+
+    Parameters:
+    - frame (numpy.ndarray): A numpy array representing the image in which faces need to be detected.
+    - mtcnn (MTCNN object): An instance of the MTCNN detector used for face detection.
+    - threshold (float, optional): The probability threshold below which bounding boxes are filtered out.
+                                   Default is 0.9.
+
+    Returns:
+    - list of lists: A list of bounding boxes that passed the threshold. Each bounding box is represented 
+                     as a list of four numbers: [x1, y1, x2, y2], where (x1, y1) is the top-left corner 
+                     and (x2, y2) is the bottom-right corner of the bounding box.
+^   """
     bounding_boxes, probabilities = mtcnn.detect(frame, landmarks=False)
     if bounding_boxes is not None:
         bounding_boxes = bounding_boxes[probabilities > probability_threshold]
