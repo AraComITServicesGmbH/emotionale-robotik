@@ -16,7 +16,19 @@ from vision import (
 from cli import print_connect, print_disconnect, print_emotions
 
 
-def update_values(queue: Queue):
+def update_values(queue: Queue):    
+    """
+    Continuously captures video frames from the default camera and 
+    detects faces along with their associated emotions in each frame. The processed
+    frame and emotions are then added to the given queue. If the queue is full,
+    the previous contents are cleared.
+    
+    The function uses an MTCNN detector for face detection and the HSEmotionRecognizer 
+    for emotion recognition. Frames are processed at a specified FRAME_RATE.
+    
+    Parameters:
+    - queue (Queue): A queue object to store the captured frame and the detected emotions.
+    """
     capture = cv.VideoCapture(0)
     check_camera_available(capture)
     device = check_cuda_available()
