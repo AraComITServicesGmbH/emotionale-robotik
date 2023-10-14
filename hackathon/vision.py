@@ -18,7 +18,7 @@ def check_camera_available(capture):
         exit()
 
 
-def detect_faces(mtcnn, frame):
+def detect_and_filter_faces(mtcnn, frame):
     bounding_boxes, probs = mtcnn.detect(frame, landmarks=False)
     if bounding_boxes is not None:
         bounding_boxes = bounding_boxes[probs > 0.9]

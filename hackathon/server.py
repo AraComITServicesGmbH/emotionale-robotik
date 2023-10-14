@@ -9,7 +9,7 @@ from communication import create_server_socket, send_image_and_emotions
 from vision import (
     check_cuda_available,
     check_camera_available,
-    detect_faces,
+    detect_and_filter_faces,
     adjust_bounding_boxes,
     predict_emotions_from_faces,
 )
@@ -32,7 +32,7 @@ def update_values(queue: Queue):
                 previous_time = time.time()
                 _, frame_bgr = capture.read()
                 frame = cv.cvtColor(frame_bgr, cv.COLOR_BGR2RGB)
-                bounding_boxes = detect_faces(mtcnn, frame)
+                bounding_boxes = detect_and_filter_faces(mtcnn, frame)
                 bounding_boxes = adjust_bounding_boxes(
                     bounding_boxes, frame.shape[0], frame.shape[1]
                 )
