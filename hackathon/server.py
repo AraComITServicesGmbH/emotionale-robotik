@@ -8,7 +8,7 @@ from config import SERVER_IP, SERVER_PORT, FRAME_RATE, UPDATE_RATE
 from communication import create_server_socket, send_image_and_emotions
 from vision import (
     check_and_print_cuda_available,
-    check_camera_available,
+    ensure_camera_available,
     detect_and_filter_faces,
     adjust_bounding_boxes,
     predict_emotions_from_faces,
@@ -30,7 +30,7 @@ def update_values(queue: Queue):
     - queue (Queue): A queue object to store the captured frame and the detected emotions.
     """
     capture = cv.VideoCapture(0)
-    check_camera_available(capture)
+    ensure_camera_available(capture)
     device = check_and_print_cuda_available()
     mtcnn = MTCNN(keep_all=False, post_process=False, min_face_size=40, device=device)
     emotion_recognizer = HSEmotionRecognizer(

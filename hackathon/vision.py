@@ -18,7 +18,7 @@ def check_and_print_cuda_available():
         return "cpu"
 
 
-def check_camera_available(capture):
+def ensure_camera_available(capture):
     """
     This function checks the status of a given camera capture object. If the camera
     is not open or available, it prints an error message and terminates the program.
