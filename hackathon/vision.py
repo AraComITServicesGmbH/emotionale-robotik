@@ -1,7 +1,7 @@
 import torch
 import numpy as np
 
-def check_cuda_available():
+def check_and_print_cuda_available():
     use_cuda = torch.cuda.is_available()
     if use_cuda:
         print("Cuda will be used for calculation")

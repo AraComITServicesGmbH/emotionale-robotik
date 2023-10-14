@@ -7,7 +7,7 @@ import time
 from config import SERVER_IP, SERVER_PORT, FRAME_RATE, UPDATE_RATE
 from communication import create_server_socket, send_image_and_emotions
 from vision import (
-    check_cuda_available,
+    check_and_print_cuda_available,
     check_camera_available,
     detect_and_filter_faces,
     adjust_bounding_boxes,
@@ -31,7 +31,7 @@ def update_values(queue: Queue):
     """
     capture = cv.VideoCapture(0)
     check_camera_available(capture)
-    device = check_cuda_available()
+    device = check_and_print_cuda_available()
     mtcnn = MTCNN(keep_all=False, post_process=False, min_face_size=40, device=device)
     emotion_recognizer = HSEmotionRecognizer(
         model_name="enet_b0_8_best_afew", device=device
