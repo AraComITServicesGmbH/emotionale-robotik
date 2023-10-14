@@ -40,6 +40,16 @@ def create_server_socket(ip, port):
 
 
 def send_image_and_emotions(open_socket, photo, emotions):
+     """Sends an image and emotions over a socket.
+
+    Parameters:
+    - open_socket (socket.socket): An open socket over which the data should be sent. 
+    - photo (numpy.ndarray): A numpy array representing the image to be sent.
+    - emotions (list|tuple): A list containing the emotions associated with the photo.
+
+    Raises:
+        Exception: If an error occurs while sending the data.
+    """
     ret, buffer = cv.imencode(".jpg", photo, [int(cv.IMWRITE_JPEG_QUALITY), 30])
     x_as_bytes = pickle.dumps((buffer, emotions))
     open_socket.sendall(x_as_bytes)
