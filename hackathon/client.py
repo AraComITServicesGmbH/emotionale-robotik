@@ -11,6 +11,19 @@ from cli import print_connect, print_disconnect
 
 
 def update_robot(queue: Queue, robot: Robot):
+    """
+    Continuously update the robot with photos and corresponding emotions 
+    from the queue at the robot's specified update interval. After processing 
+    an item from the queue, it clears the rest of the queue to ensure the 
+    robot only receives the latest information.
+
+    Parameters:
+    - queue (Queue): A queue containing tuples of photos and corresponding emotions.
+    - robot (Robot): An instance of a Robot that has an update method and an update_interval attribute.
+
+    Note:
+    This function runs in an infinite loop and should typically be executed in a separate thread.
+    """
     while True:
         photo, emotions = queue.get()
         with queue.mutex:
