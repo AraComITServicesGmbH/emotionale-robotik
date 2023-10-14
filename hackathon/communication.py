@@ -5,6 +5,16 @@ from pickle import UnpicklingError
 
 
 def create_client_socket():
+    """
+    Creates and configures a client socket for TCP communication.
+    
+    This function initializes a new client socket using the IPv4 address family 
+    and the TCP protocol. It also configures the socket's send buffer size 
+    to 100,000 bytes to optimize sending performance.
+
+    Returns:
+        socket: A configured TCP client socket using IPv4.
+    """
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client_socket.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 100000)
     return client_socket
