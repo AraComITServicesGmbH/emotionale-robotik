@@ -16,7 +16,7 @@ def create_server_socket(ip, port):
     return server_socket
 
 
-def send_image_and_emotions(open_socket, address, photo, emotions):
+def send_image_and_emotions(open_socket, photo, emotions):
     ret, buffer = cv.imencode(".jpg", photo, [int(cv.IMWRITE_JPEG_QUALITY), 30])
     x_as_bytes = pickle.dumps((buffer, emotions))
     open_socket.sendall(x_as_bytes)

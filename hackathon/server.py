@@ -112,7 +112,7 @@ def update_to_client(client, address, queue):
             if time_elapsed > 1/UPDATE_RATE:
                 time_elapsed = time.time()
                 (frame_bgr, emotions) = queue.get()
-                send_image_and_emotions(client, address, frame_bgr, emotions)
+                send_image_and_emotions(client, frame_bgr, emotions)
     except Exception:
         print_disconnect(address)
         client.close()
