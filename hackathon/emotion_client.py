@@ -14,9 +14,8 @@ class EmotionClient(EmotionCommunicator):
         configuring the socket's send buffer size to 100,000 bytes to enhance 
         sending performance.
         """
-        client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        client_socket.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 100000)
-        return client_socket
+        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.client_socket.setsockopt(socket.SOL_SOCKET, socket.SO_SNDBUF, 100000)
 
     def update_from_server(self, queue: Queue):
         """
@@ -35,15 +34,15 @@ class EmotionClient(EmotionCommunicator):
         a separate thread to avoid blocking the main program.
         """
         while True:
-            client_socket = self.create_client_socket()
+            self.create_client_socket()
             try:
-                client_socket.connect((self.ip, self.port))
+                self.client_socket.connect((self.ip, self.port))
                 super().print_connect()
                 while True:
-                    result = super().receive_image_and_emotions(client_socket)
+                    result = super().receive_image_and_emotions(self.client_socket)
                     if result is not None:
                         queue.put(result)
             except Exception: # Expected exceptions include disconnects or EOFError.
                 super().print_disconnect()
-                client_socket.close()
+                self.client_socket.close()
             time.sleep(1)
