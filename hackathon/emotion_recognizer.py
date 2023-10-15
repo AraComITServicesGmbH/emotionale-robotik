@@ -64,20 +64,12 @@ class EmotionRecognizer:
         
 
 
-    def sort_and_clip_values_from_bounding_boxes(self):
+    def sort_values_from_bounding_boxes(self):
         """
-        Sorts and clips bounding box values to ensure they are within specified limits.
-
-        Given a list of bounding boxes, this function:
-        1. Sorts the x and y coordinates within each bounding box to ensure x1 < x2 and y1 < y2.
-        2. Clips the x and y values of each bounding box to be within the specified limits.
-
-        Returns:
-        - list of lists: A list of sorted and clipped bounding boxes. Each bounding box is in the format: [x1, y1, x2, y2].
+        Sorts bounding box values to ensure they are within specified limits.
+        The function ensures x1 < x2 and y1 < y2.
         """
-        x_limit = self.frame.shape[0]
-        y_limit = self.frame.shape[1]
-        limited_bounding_boxes = []
+        sorted_bounding_boxes = []
         for bounding_box in self.bounding_boxes:
             box = bounding_box.astype(int)
             x1, y1, x2, y2 = box[0:4]
@@ -85,12 +77,26 @@ class EmotionRecognizer:
             ys = [y1, y2]
             xs.sort()
             ys.sort()
-            xs[0] = np.clip(xs[0], 0, x_limit - 2)
-            xs[1] = np.clip(xs[1], 0, x_limit - 1)
-            ys[0] = np.clip(ys[0], 0, y_limit - 2)
-            ys[1] = np.clip(ys[1], 0, y_limit - 1)
+            sorted_box = np.array([xs[0], ys[0], xs[1], ys[1]])
+            sorted_bounding_boxes.append(sorted_box)
+        self.bounding_boxes = sorted_bounding_boxes
 
-            limited_box = [xs[0], ys[0], xs[1], ys[1]]
+
+    def clip_values_from_bounding_boxes(self):
+        """
+        Clips bounding box values to ensure they are within specified limits.
+        """
+        x_limit = self.frame.shape[0]
+        y_limit = self.frame.shape[1]
+        limited_bounding_boxes = []
+        for bounding_box in self.bounding_boxes:
+            box = bounding_box.astype(int)
+            x1, y1, x2, y2 = box[0:4]
+            x1 = np.clip(x1, 0, x_limit - 2)
+            x2 = np.clip(x2, 0, x_limit - 1)
+            y1 = np.clip(y1, 0, y_limit - 2)
+            y2 = np.clip(y2, 0, y_limit - 1)
+            limited_box = np.array([x1, y1, x2, y2])
             limited_bounding_boxes.append(limited_box)
         self.bounding_boxes = limited_bounding_boxes
 
@@ -132,10 +138,9 @@ class EmotionRecognizer:
                     _, frame_bgr = self.capture.read()
                     self.frame = cv.cvtColor(frame_bgr, cv.COLOR_BGR2RGB)
                     self.detect_and_filter_faces()
-                    self.sort_and_clip_values_from_bounding_boxes(
-                    )
-                    self.predict_emotions_from_faces(
-                    )
+                    self.sort_values_from_bounding_boxes()
+                    self.clip_values_from_bounding_boxes()
+                    self.predict_emotions_from_faces()
                     if queue.full():
                         with queue.mutex:
                             queue.queue.clear()
